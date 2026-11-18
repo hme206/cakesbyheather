@@ -66,32 +66,17 @@ a { color: var(--slate); }
 .hero {
   position: relative;
   text-align: center;
-  padding: 5rem 1.5rem 4rem;
+  /* extra top space so the text sits inside the flower arch */
+  padding: clamp(14rem, 31vw, 22rem) 1.5rem 4rem;
   overflow: hidden;
-  background: var(--paper);
+  background-color: var(--paper);
+ background-image: url("images/cakesbyheather.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: max(100%, 780px) auto;
+  /* multiply makes the photo's white background blend into the page color */
+  background-blend-mode: multiply;
 }
-
-/* Flower-style decorations in the corners */
-.hero::before,
-.hero::after {
-  content: "";
-  position: absolute;
-  width: 320px;
-  height: 220px;
-  pointer-events: none;
-  background:
-    radial-gradient(circle at 30% 35%, var(--coral) 0 18px, transparent 19px),
-    radial-gradient(circle at 30% 35%, var(--slate) 0 46px, transparent 47px),
-    radial-gradient(circle at 62% 18%, var(--blush) 0 14px, transparent 15px),
-    radial-gradient(circle at 62% 18%, var(--sage) 0 32px, transparent 33px),
-    radial-gradient(circle at 12% 75%, var(--slate) 0 26px, transparent 27px),
-    radial-gradient(circle at 80% 55%, var(--sage) 0 24px, transparent 25px),
-    radial-gradient(circle at 48% 74%, var(--slate) 0 14px, transparent 15px),
-    radial-gradient(circle at 72% 88%, var(--sage) 0 22px, transparent 23px);
-}
-
-.hero::before { top: -50px; left: -60px; }
-.hero::after  { top: -50px; right: -60px; transform: scaleX(-1); }
 
 .hero h1 {
   position: relative;
@@ -223,8 +208,4 @@ footer {
   text-transform: none;
   letter-spacing: 0;
   color: var(--taupe);
-}
-
-@media (max-width: 600px) {
-  .hero::before, .hero::after { width: 200px; height: 140px; }
 }
