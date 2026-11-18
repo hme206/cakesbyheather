@@ -131,7 +131,7 @@ section h2 {
 }
 
 .band { background: var(--sage-light); max-width: none; }
-.band + section + .band { background: var(--slate-light); }
+#cookies { background: var(--slate-light); }
 .band > .inner { max-width: 900px; margin: 0 auto; }
 
 .cards {
@@ -213,3 +213,53 @@ footer {
   letter-spacing: 0;
   color: var(--taupe);
 }
+
+/* ---------- Price list page ---------- */
+.hero-short { padding-bottom: 2rem; }
+.hero-short h1 { margin-bottom: 1rem; }
+
+.prices {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.price-group {
+  background: #fff;
+  border: 2px solid var(--sage);
+  border-top: 6px solid var(--slate);
+  border-radius: 14px;
+  padding: 1.5rem;
+}
+
+.price-group h2 { font-size: 1.4rem; margin-bottom: 0.25rem; }
+
+.price-group .note {
+  text-align: center;
+  color: var(--taupe);
+  margin-bottom: 0.5rem;
+}
+
+.price-table { width: 100%; border-collapse: collapse; margin-top: 0.75rem; }
+
+.price-table th,
+.price-table td {
+  padding: 0.6rem 0.25rem;
+  border-bottom: 2px dotted var(--sage);
+}
+
+.price-table tr:last-child th,
+.price-table tr:last-child td { border-bottom: none; }
+
+.price-table th { text-align: left; font-weight: 400; }
+
+.price-table td {
+  text-align: right;
+  font-weight: 500;
+  color: var(--slate);
+  white-space: nowrap;
+}
+
+.servings { color: var(--taupe); font-size: 0.9em; }
+
+.cards.two { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
