@@ -9,6 +9,8 @@
   --slate: #7a7a9d;
   --taupe: #a89e96;
   --ink: #3b3338;
+  --sage-light: #e6efec;
+  --slate-light: #ebebf3;
   --paper: #fafafa;
 }
 
@@ -32,7 +34,9 @@ h1, h2, h3 {
   line-height: 1.2;
 }
 
-a { color: var(--coral-dark); }
+h2 { color: var(--slate); }
+
+a { color: var(--slate); }
 
 /* ---------- Navigation ---------- */
 .site-nav {
@@ -40,7 +44,7 @@ a { color: var(--coral-dark); }
   top: 0;
   z-index: 10;
   background: rgba(250, 250, 250, 0.95);
-  border-bottom: 2px solid var(--blush);
+  border-bottom: 3px solid var(--sage);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -56,7 +60,7 @@ a { color: var(--coral-dark); }
   color: var(--ink);
 }
 
-.site-nav a:hover { color: var(--coral); }
+.site-nav a:hover { color: var(--slate); }
 
 /* ---------- Hero ---------- */
 .hero {
@@ -76,13 +80,14 @@ a { color: var(--coral-dark); }
   height: 220px;
   pointer-events: none;
   background:
-    radial-gradient(circle at 30% 35%, var(--coral) 0 26px, transparent 27px),
-    radial-gradient(circle at 30% 35%, var(--blush) 0 46px, transparent 47px),
-    radial-gradient(circle at 62% 18%, var(--slate) 0 16px, transparent 17px),
-    radial-gradient(circle at 62% 18%, var(--blush) 0 30px, transparent 31px),
-    radial-gradient(circle at 12% 75%, var(--blush) 0 24px, transparent 25px),
-    radial-gradient(circle at 80% 55%, var(--sage) 0 18px, transparent 19px),
-    radial-gradient(circle at 45% 72%, var(--taupe) 0 12px, transparent 13px);
+    radial-gradient(circle at 30% 35%, var(--coral) 0 18px, transparent 19px),
+    radial-gradient(circle at 30% 35%, var(--slate) 0 46px, transparent 47px),
+    radial-gradient(circle at 62% 18%, var(--blush) 0 14px, transparent 15px),
+    radial-gradient(circle at 62% 18%, var(--sage) 0 32px, transparent 33px),
+    radial-gradient(circle at 12% 75%, var(--slate) 0 26px, transparent 27px),
+    radial-gradient(circle at 80% 55%, var(--sage) 0 24px, transparent 25px),
+    radial-gradient(circle at 48% 74%, var(--slate) 0 14px, transparent 15px),
+    radial-gradient(circle at 72% 88%, var(--sage) 0 22px, transparent 23px);
 }
 
 .hero::before { top: -50px; left: -60px; }
@@ -111,7 +116,7 @@ a { color: var(--coral-dark); }
 
 .button {
   display: inline-block;
-  background: var(--coral);
+  background: var(--slate);
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
@@ -121,7 +126,7 @@ a { color: var(--coral-dark); }
   transition: background 0.2s;
 }
 
-.button:hover { background: var(--coral-dark); }
+.button:hover { background: var(--sage); }
 
 /* ---------- Sections ---------- */
 section {
@@ -136,7 +141,8 @@ section h2 {
   margin-bottom: 1.5rem;
 }
 
-.band { background: var(--blush-light); max-width: none; }
+.band { background: var(--sage-light); max-width: none; }
+.band + section + .band { background: var(--slate-light); }
 .band > .inner { max-width: 900px; margin: 0 auto; }
 
 .cards {
@@ -148,7 +154,8 @@ section h2 {
 
 .card {
   background: #fff;
-  border: 2px solid var(--blush);
+  border: 2px solid var(--sage);
+  border-top: 6px solid var(--slate);
   border-radius: 14px;
   padding: 1.5rem;
   text-align: center;
@@ -185,7 +192,7 @@ section h2 {
 
 /* ---------- Footer ---------- */
 footer {
-  background: var(--coral);
+  background: var(--slate);
   color: #fff;
   text-align: center;
   padding: 2rem 1rem;
@@ -198,7 +205,7 @@ footer {
 
 .toc-list { list-style: none; }
 
-.toc-list li { border-bottom: 2px dotted var(--blush); }
+.toc-list li { border-bottom: 2px dotted var(--sage); }
 
 .toc-list a {
   display: block;
@@ -209,7 +216,7 @@ footer {
   letter-spacing: 0.08em;
 }
 
-.toc-list a:hover { color: var(--coral); background: var(--blush-light); }
+.toc-list a:hover { color: var(--slate); background: var(--sage-light); }
 
 .toc-list small {
   display: block;
