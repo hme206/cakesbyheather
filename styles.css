@@ -70,7 +70,7 @@ a { color: var(--slate); }
   padding: clamp(14rem, 31vw, 22rem) 1.5rem 4rem;
   overflow: hidden;
   background-color: var(--paper);
- background-image: url("images/cakesbyheather.jpg");
+  background-image: url("images/cakesbyheather.jpg");
   background-repeat: no-repeat;
   background-position: top center;
   background-size: max(100%, 780px) auto;
@@ -80,6 +80,10 @@ a { color: var(--slate); }
 
 .hero h1 {
   position: relative;
+  display: inline-block;
+  background: #ffffff;           /* solid white box behind the name */
+  padding: 1.5rem 3rem;
+  border-radius: 16px;
   font-size: clamp(2.6rem, 8vw, 4.5rem);
   letter-spacing: 0.12em;
   margin-bottom: 1.5rem;
