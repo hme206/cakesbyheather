@@ -1,0 +1,223 @@
+/* Cakes by Heather - shared styles
+   Palette pulled from the business card */
+:root {
+  --coral: #ee7a8e;
+  --coral-dark: #e0607a;
+  --blush: #f6c1cd;
+  --blush-light: #fdeef1;
+  --sage: #7fa89a;
+  --slate: #7a7a9d;
+  --taupe: #a89e96;
+  --ink: #3b3338;
+  --paper: #fafafa;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Zilla Slab", Georgia, serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+h1, h2, h3 {
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--coral);
+  line-height: 1.2;
+}
+
+a { color: var(--coral-dark); }
+
+/* ---------- Navigation ---------- */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(250, 250, 250, 0.95);
+  border-bottom: 2px solid var(--blush);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.75rem;
+  padding: 0.9rem 1rem;
+}
+
+.site-nav a {
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+.site-nav a:hover { color: var(--coral); }
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 5rem 1.5rem 4rem;
+  overflow: hidden;
+  background: var(--paper);
+}
+
+/* Flower-style decorations in the corners */
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 220px;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 30% 35%, var(--coral) 0 26px, transparent 27px),
+    radial-gradient(circle at 30% 35%, var(--blush) 0 46px, transparent 47px),
+    radial-gradient(circle at 62% 18%, var(--slate) 0 16px, transparent 17px),
+    radial-gradient(circle at 62% 18%, var(--blush) 0 30px, transparent 31px),
+    radial-gradient(circle at 12% 75%, var(--blush) 0 24px, transparent 25px),
+    radial-gradient(circle at 80% 55%, var(--sage) 0 18px, transparent 19px),
+    radial-gradient(circle at 45% 72%, var(--taupe) 0 12px, transparent 13px);
+}
+
+.hero::before { top: -50px; left: -60px; }
+.hero::after  { top: -50px; right: -60px; transform: scaleX(-1); }
+
+.hero h1 {
+  position: relative;
+  font-size: clamp(2.6rem, 8vw, 4.5rem);
+  letter-spacing: 0.12em;
+  margin-bottom: 1.5rem;
+}
+
+.hero .tagline {
+  position: relative;
+  font-size: 1.25rem;
+  color: var(--taupe);
+  margin-bottom: 2rem;
+}
+
+.cake-stand {
+  display: block;
+  width: min(300px, 70%);
+  margin: 0 auto 2rem;
+  fill: var(--coral);
+}
+
+.button {
+  display: inline-block;
+  background: var(--coral);
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.85rem 2.2rem;
+  border-radius: 999px;
+  transition: background 0.2s;
+}
+
+.button:hover { background: var(--coral-dark); }
+
+/* ---------- Sections ---------- */
+section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+section h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.band { background: var(--blush-light); max-width: none; }
+.band > .inner { max-width: 900px; margin: 0 auto; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: #fff;
+  border: 2px solid var(--blush);
+  border-radius: 14px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.card h3 { font-size: 1.15rem; margin-bottom: 0.5rem; color: var(--slate); }
+
+.steps { list-style: none; counter-reset: step; max-width: 600px; margin: 0 auto; }
+
+.steps li {
+  counter-increment: step;
+  position: relative;
+  padding-left: 3rem;
+  margin-bottom: 1.25rem;
+}
+
+.steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--sage);
+  color: #fff;
+  text-align: center;
+  line-height: 2rem;
+  font-size: 0.95rem;
+}
+
+.contact { text-align: center; }
+.contact p { margin-bottom: 0.5rem; }
+
+/* ---------- Footer ---------- */
+footer {
+  background: var(--coral);
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  letter-spacing: 0.05em;
+}
+
+/* ---------- Table of contents page ---------- */
+.toc-page { max-width: 600px; margin: 0 auto; padding: 4rem 1.5rem; }
+.toc-page h1 { text-align: center; margin-bottom: 2rem; font-size: 2.2rem; }
+
+.toc-list { list-style: none; }
+
+.toc-list li { border-bottom: 2px dotted var(--blush); }
+
+.toc-list a {
+  display: block;
+  padding: 1rem 0.5rem;
+  text-decoration: none;
+  color: var(--ink);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.toc-list a:hover { color: var(--coral); background: var(--blush-light); }
+
+.toc-list small {
+  display: block;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--taupe);
+}
+
+@media (max-width: 600px) {
+  .hero::before, .hero::after { width: 200px; height: 140px; }
+}
